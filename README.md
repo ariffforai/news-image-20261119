@@ -1,34 +1,76 @@
-# THE WORLD IN ONE DAY — Thursday 19 November 2026
+# One Day in the News — 19 November 2026
 
-[![make.fun · news-image-20261119](https://make.fun/badge/news-image-20261119.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
-[![rank](https://make.fun/badge/news-image-20261119/ariffforai/news-image-20261119/rank.svg)](https://make.fun/bounty/news-image-20261119/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
-[![reward](https://make.fun/badge/news-image-20261119/ariffforai/news-image-20261119/reward.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
+An entry for the Make.fun news-image bounty of 19 November 2026: a single
+1024×1024 newspaper front page that tries to hold one whole day of world
+news on one sheet of paper.
 
-One image summing up the world news of **Thursday 19 November 2026**, built for [make.fun](https://make.fun/bounty/news-image-20261119)'s "Sum up 19 November's world news in one image" bounty ($250).
+## What is on the page
 
-## The day in 50 stories
+Fifty stories, every one of them about something that actually happened on
+Thursday 19 November 2026 — not merely reported that day. They are spread
+across eight regions: Americas 13, Asia 9, Africa 8, Europe 6,
+Middle East 10, Global 2, Oceania 1 and Space 1.
 
-The front page is drawn in code from `stories.json`: a masthead stating the count (50 stories · 8 regions), the giant date, a UTC timeline of the day, four illustrated hero stories, a twelve-story grid with icons, a world map with numbered pins and a region legend, a numbered one-line list for stories 17–50, a DATE CHECK bar naming what was deliberately left out, and a footer stating the date rule and the sources.
+The page is laid out like a broadsheet front page:
 
-**The big four**
+- **The big four** — the day's four largest stories, each with a small flat
+  illustration: the worldwide launch of Grand Theft Auto VI; the first-ever
+  Xi–Trump–Putin trilateral summit in Shenzhen and its "Declaration Towards
+  Peace"; the International Court of Justice ruling, 9–6, that Myanmar
+  committed genocide against the Rohingya; and the third Ukrainian strike
+  on the Kerch Bridge in four days, which halted rail traffic.
+- **The day in UTC** — a six-slot timeline running from the overnight Kerch
+  Bridge strike and the midnight GTA VI unlock, through the Shenzhen summit
+  and the Hague verdict, to the evening's first sales estimates.
+- **More of the day** — twelve further stories in an icon grid, from a
+  Houthi missile hitting Riyadh's tallest tower to SpaceX scrubbing a
+  Space Force launch at Vandenberg.
+- **Where it happened** — a schematic world map with sixteen numbered pins
+  for the heroes and the grid stories.
+- **The rest of the day** — stories 17 to 50 as a numbered list, covering
+  the US Senate's rejection of an Iran war-powers resolution, a Kenyan
+  rare-earths deal, a doping ban for a marathon champion, and more.
+- **Date check** — a red bar listing seven big stories that look like
+  19 November news but are not: each one is shown with its true date, so
+  nobody mistakes a Wednesday event for a Thursday one.
 
-1. **GTA VI is out — 13 years later** — the game unlocks at midnight local time around the world, with a 99 on Metacritic; 6.38 million people watched the launch in its first 90 minutes.
-2. **Trump, Xi and Putin meet — a first** — the first-ever trilateral of the three leaders, at Kylin Villa in Shenzhen, ends with a joint pledge that a nuclear war cannot be won and must never be fought.
-3. **Court: Myanmar committed genocide** — the International Court of Justice rules 9–6 that Myanmar's 2017 crackdown on the Rohingya was genocide, the first time the court has held a state responsible for the crime.
-4. **Kerch Bridge hit a third time** — Ukrainian Neptune missiles strike the bridge linking Russia and Crimea for the third time in four days, halting rail traffic.
+## How the image is made
 
-**More of the day** — COP31's draft drops all fossil-fuel language; Anthropic's $1.5 trillion IPO debuts at $83 and closes at $97; Wall Street slumps 2% in its longest slide since April 2024; Bangladesh locks down under 3,000 paramilitary troops; the FCC lets prisons jam contraband phones; Mongolia's president quits; three tankers hit mines off Hormuz; the IEA calls the Hormuz crisis the greatest threat to energy security ever; and potatoes grow in simulated moon soil.
+`stories.json` holds all fifty stories, the timeline, the map pins, the
+numbered list and the date-check items. A drawing script turns that file
+into `entry.png`, a 1024×1024 PNG. The picture on the page is drawn from
+the data, so changing a story means changing the JSON and re-rendering —
+nothing is baked in by hand.
 
-Every story is tagged CLAIM or CONFIRMED with its source, and every story happened or was first reported on 19 November 2026. Seven near-misses were checked and moved to the DATE CHECK bar instead of the front page: the Van Gogh record sale, the Pew report on Islam passing Christianity by 2035, Jeffries being named speaker-designate, the US–Venezuela military deal, Musk's "pretty foolish" midterm-spending regret and the Ethiopia–Eritrea troop buildup all belong to Wednesday 18 November; the UK–EU summit and the COP31 final deal are both due Friday 20 November.
+## How main.py works
 
-The image is an original front page drawn with PIL from the story data in `stories.json`: masthead, timeline, heroes, grid, map, list, date check and footer, with simple flat illustrations drawn in code. No photograph, character or artwork belonging to anyone else is used.
+`main.py` is deliberately small. It finds `entry.png` next to itself,
+reads it, and copies it into the directory named by `MAKEFUN_OUTPUT_DIR`
+(`/output` if the variable is unset), creating that directory when needed.
+Before it calls the job done it verifies the copy: the eight-byte PNG
+signature must be present, the first chunk must be a 13-byte IHDR, and
+the IHDR must declare a width and height of 1024×1024. It then re-reads
+the destination file and checks it is byte-for-byte identical to the
+source. Any failure — a missing source file, a bad signature, wrong
+dimensions, or a copy that differs — is reported on stderr and the
+program exits with a non-zero status. It uses only the Python standard
+library, makes no network calls, and behaves the same way every run.
 
-## How it works
+## Verification done
 
-`main.py` (Python 3.13, standard library only) copies the shipped `entry.png` to `$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output/entry.png`). It is deterministic — both runs write identical bytes — and needs no network.
+- `stories.json` was checked against the drawing script: 50 stories in
+  total (4 heroes + 12 grid + 34 listed), region counts add up to 50,
+  and the renderer reported no text-overflow problems.
+- The rendered `entry.png` is a PNG of 1024×1024 pixels and under
+  1,048,576 bytes.
+- `main.py` was run twice with different output directories and both runs
+  produced outputs byte-identical to the shipped `entry.png`.
+- The page was inspected at full size and as a 256-pixel thumbnail for
+  legibility.
 
-```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
-```
+## Sources
 
-The output is a 1024×1024 PNG, 193,369 bytes — inside the 1 MiB and 1024×1024 limits.
+Each story on the page names its source next to it — among them
+Al Jazeera, the Straits Times, Interfax, the IEA, the IAEA, Spaceflight
+Now, the South China Morning Post, OkayAfrica, the Times and Reuters
+reporting carried by the outlets shown.

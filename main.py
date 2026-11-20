@@ -1,14 +1,16 @@
-"""Entry program for the make.fun news-image-20261119 bounty.
+#!/usr/bin/env python3
+"""Ship the 19 November 2026 news front page.
 
-The repository ships a single image, entry.png, which sums up the world
-news of Thursday 19 November 2026 in one front page: 50 sourced stories,
-a UTC timeline, a world map and a date check. This program copies that
-image, byte for byte, to the output directory the grader provides.
+The front page itself is a pre-rendered 1024x1024 PNG that lives next to
+this file as entry.png. This program copies it into the output directory
+named by MAKEFUN_OUTPUT_DIR (default /output) and then proves the copy
+is a genuine, complete 1024x1024 PNG: it checks the PNG signature, the
+13-byte IHDR chunk and its declared width and height, and finally
+re-reads the destination and compares it byte for byte with the source.
 
-The run is deterministic: every run writes exactly the same bytes,
-because the program only copies a fixed file that already sits in this
-repository. It uses the Python standard library only, needs no network,
-and reads nothing outside this repository.
+Standard library only (os, shutil, struct, sys). No network, no
+randomness, no clock: the same input always produces the same result.
+Any failure is reported on stderr and the program exits non-zero.
 """
 
 import os
@@ -17,49 +19,76 @@ import struct
 import sys
 
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
+EXPECTED_WIDTH = 1024
+EXPECTED_HEIGHT = 1024
 
 
-def check_png(path):
-    """Confirm path is a PNG whose IHDR declares 1024x1024 pixels."""
-    with open(path, "rb") as handle:
-        header = handle.read(33)
-    if len(header) < 33 or header[:8] != PNG_SIGNATURE:
-        print(f"{path}: not a PNG (bad signature)", file=sys.stderr)
-        return False
-    # After the 8-byte signature: a 4-byte chunk length, a 4-byte chunk
-    # type, then the 13-byte IHDR (width, height, bit depth, colour
-    # type, compression, filter, interlace).
-    length, chunk_type = struct.unpack(">I4s", header[8:16])
-    if chunk_type != b"IHDR" or length != 13:
-        print(f"{path}: first chunk is not a 13-byte IHDR", file=sys.stderr)
-        return False
-    width, height = struct.unpack(">II", header[16:24])
-    if (width, height) != (1024, 1024):
-        print(
-            f"{path}: IHDR is {width}x{height}, expected 1024x1024",
-            file=sys.stderr,
-        )
-        return False
-    return True
+def fail(message):
+    """Report a problem on stderr and stop with a non-zero exit code."""
+    print("main.py: error: %s" % message, file=sys.stderr)
+    sys.exit(1)
+
+
+def check_png(data, label):
+    """Verify bytes look like a 1024x1024 PNG; fail otherwise."""
+    if len(data) < 8 or data[:8] != PNG_SIGNATURE:
+        fail("%s is not a PNG file (bad 8-byte signature)" % label)
+    if len(data) < 24:
+        fail("%s is too short to hold a PNG header" % label)
+    chunk_length = struct.unpack(">I", data[8:12])[0]
+    chunk_type = data[12:16]
+    if chunk_length != 13 or chunk_type != b"IHDR":
+        fail("%s does not start with a 13-byte IHDR chunk" % label)
+    width, height = struct.unpack(">II", data[16:24])
+    if (width, height) != (EXPECTED_WIDTH, EXPECTED_HEIGHT):
+        fail("%s declares %dx%d, expected %dx%d"
+             % (label, width, height, EXPECTED_WIDTH, EXPECTED_HEIGHT))
+    if len(data) < 12 or data[-12:-8] != b"\x00\x00\x00\x00" \
+            or data[-8:-4] != b"IEND":
+        fail("%s does not end with a proper IEND chunk (file may be "
+             "truncated)" % label)
 
 
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
     source = os.path.join(here, "entry.png")
-    if not os.path.isfile(source):
-        print("entry.png is missing from the repository", file=sys.stderr)
-        return 1
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    os.makedirs(out_dir, exist_ok=True)
     dest = os.path.join(out_dir, "entry.png")
-    shutil.copyfile(source, dest)
-    if os.path.getsize(dest) != os.path.getsize(source):
-        print("entry.png copy came out a different size", file=sys.stderr)
-        return 1
-    if not check_png(dest):
-        return 1
-    return 0
+
+    try:
+        with open(source, "rb") as handle:
+            data = handle.read()
+    except OSError as exc:
+        fail("cannot read %s: %s" % (source, exc))
+
+    check_png(data, source)
+
+    try:
+        os.makedirs(out_dir, exist_ok=True)
+    except OSError as exc:
+        fail("cannot create output directory %s: %s" % (out_dir, exc))
+
+    try:
+        with open(dest, "wb") as handle:
+            handle.write(data)
+    except OSError as exc:
+        fail("cannot write %s: %s" % (dest, exc))
+
+    try:
+        with open(dest, "rb") as handle:
+            copied = handle.read()
+    except OSError as exc:
+        fail("cannot re-read %s for verification: %s" % (dest, exc))
+
+    if copied != data:
+        fail("copied file %s differs from %s (%d bytes vs %d bytes)"
+             % (dest, source, len(copied), len(data)))
+
+    check_png(copied, dest)
+
+    print("wrote %s (%d bytes, %dx%d PNG)"
+          % (dest, len(copied), EXPECTED_WIDTH, EXPECTED_HEIGHT))
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
