@@ -1,0 +1,509 @@
+{
+ "datecheck": [
+  "Van Gogh's $190.4m record sale was Wednesday 18 Nov, not today.",
+  "Pew's Islam-passes-Christianity-by-2035 report was released Wed 18 Nov.",
+  "Jeffries was named speaker-designate by Democrats on Wed 18 Nov.",
+  "The US-Venezuela military deal was signed on Wed 18 Nov.",
+  "Musk's 'pretty foolish' midterm-spending regret was Wed 18 Nov.",
+  "The Ethiopia-Eritrea troop buildup was reported by Reuters Wed 18 Nov.",
+  "Not yet: the UK-EU summit and the COP31 final deal are both due Fri 20 Nov."
+ ],
+ "day": "THURSDAY 19 NOVEMBER 2026",
+ "figures": "THE DAY IN FIGURES  ·  99 Metacritic  ·  $1.5tn Anthropic  ·  10,000 Rohingya killed  ·  3 tankers mined  ·  6.38m watched GTA VI",
+ "footer": [
+  "Every story here happened or was first reported on Thursday 19 November 2026. CLAIM = one side's account, not independently confirmed.",
+  "Sources: Reuters, AP, AFP, Al Jazeera, BBC, CNN, WSJ, Le Monde, ICJ, IEA, Oregon State, NDTV, Moneycontrol. Original drawings."
+ ],
+ "grid": [
+  {
+   "headline": "COP31 DRAFT DROPS FOSSIL FUELS",
+   "icon": "leaf",
+   "n": 5,
+   "pin": [
+    30,
+    37
+   ],
+   "region": "GLOBAL",
+   "source": "Reuters",
+   "summary": "New text drops phaseout; keeps 35-by-35 goal.",
+   "tag": "CONFIRMED"
+  },
+  {
+   "headline": "ANTHROPIC DEBUTS: $83 TO $97",
+   "icon": "chart",
+   "n": 6,
+   "pin": [
+    -122,
+    37
+   ],
+   "region": "AMERICAS",
+   "source": "Reuters",
+   "summary": "Largest IPO ever; $1.5tn valuation holds.",
+   "tag": "CONFIRMED"
+  },
+  {
+   "headline": "WALL STREET SLUMPS 2%",
+   "icon": "down",
+   "n": 7,
+   "pin": [
+    -74,
+    41
+   ],
+   "region": "AMERICAS",
+   "source": "Reuters",
+   "summary": "Nasdaq -2.3%; longest slide since Apr 2024.",
+   "tag": "CONFIRMED"
+  },
+  {
+   "headline": "BANGLADESH LOCKDOWN: 3,000 TROOPS",
+   "icon": "warning",
+   "n": 8,
+   "pin": [
+    90,
+    24
+   ],
+   "region": "ASIA",
+   "source": "Reuters",
+   "summary": "Awami League strike; Yunus home torched.",
+   "tag": "CONFIRMED"
+  },
+  {
+   "headline": "FCC LETS PRISONS JAM PHONES",
+   "icon": "document",
+   "n": 9,
+   "nudge": [
+    -8,
+    -9
+   ],
+   "pin": [
+    -77,
+    39
+   ],
+   "region": "AMERICAS",
+   "source": "AP",
+   "summary": "First OK for jamming contraband mobiles.",
+   "tag": "CONFIRMED"
+  },
+  {
+   "headline": "MONGOLIA PRESIDENT QUITS",
+   "icon": "flag",
+   "n": 10,
+   "pin": [
+    107,
+    48
+   ],
+   "region": "ASIA",
+   "source": "AP",
+   "summary": "Parliament accepts Khurelsukh resignation.",
+   "tag": "CONFIRMED"
+  },
+  {
+   "headline": "3 TANKERS HIT MINES OFF HORMUZ",
+   "icon": "anchor",
+   "n": 11,
+   "pin": [
+    57,
+    26
+   ],
+   "region": "MIDDLE EAST",
+   "source": "NDTV",
+   "summary": "Ships catch fire east of the strait.",
+   "tag": "CONFIRMED"
+  },
+  {
+   "headline": "GAZA: NUSEIRAT RAID ENDS",
+   "icon": "bolt",
+   "n": 12,
+   "pin": [
+    34,
+    31
+   ],
+   "region": "MIDDLE EAST",
+   "source": "Al Jazeera",
+   "summary": "IDF pulls out after a day; 4 killed Thursday.",
+   "tag": "CONFIRMED"
+  },
+  {
+   "headline": "HOUTHI DEBRIS HITS RIYADH TOWER",
+   "icon": "flame",
+   "n": 13,
+   "pin": [
+    47,
+    25
+   ],
+   "region": "MIDDLE EAST",
+   "source": "Le Monde",
+   "summary": "PIF tower damaged after interception.",
+   "tag": "CONFIRMED"
+  },
+  {
+   "headline": "TRUMP: 'SEE WHAT HAPPENS AFTER JAN 1'",
+   "icon": "megaphone",
+   "n": 14,
+   "nudge": [
+    8,
+    8
+   ],
+   "pin": [
+    -77,
+    39
+   ],
+   "region": "MIDDLE EAST",
+   "source": "Fox News",
+   "summary": "On Iran, he tells Fox News to wait.",
+   "tag": "CONFIRMED"
+  },
+  {
+   "headline": "IEA: HORMUZ 'GREATEST THREAT EVER'",
+   "icon": "globe",
+   "n": 15,
+   "pin": [
+    2,
+    49
+   ],
+   "region": "GLOBAL",
+   "source": "IEA",
+   "summary": "Crisis tops energy-security risks, agency says.",
+   "tag": "CONFIRMED"
+  },
+  {
+   "headline": "POTATOES GROW IN MOON SOIL",
+   "icon": "satellite",
+   "n": 16,
+   "pin": [
+    -123,
+    44
+   ],
+   "region": "SPACE",
+   "source": "Oregon State",
+   "summary": "Yields match Earth soil, study finds.",
+   "tag": "CONFIRMED"
+  }
+ ],
+ "heroes": [
+  {
+   "art": "gta",
+   "headline": "GTA VI IS OUT — 13 YEARS LATER",
+   "n": 1,
+   "pin": [
+    -118,
+    34
+   ],
+   "region": "AMERICAS",
+   "source": "Rockstar / Metacritic",
+   "summary": "Unlocks at midnight local time; 99 on Metacritic.",
+   "tag": "CONFIRMED",
+   "topic": "CULTURE"
+  },
+  {
+   "art": "summit",
+   "headline": "TRUMP, XI AND PUTIN MEET — A FIRST",
+   "n": 2,
+   "pin": [
+    114,
+    22
+   ],
+   "region": "ASIA",
+   "source": "Reuters / WSJ",
+   "summary": "Trilateral at Kylin Villa; joint pledge: no nuclear war.",
+   "tag": "CONFIRMED",
+   "topic": "SUMMIT"
+  },
+  {
+   "art": "icj",
+   "headline": "COURT: MYANMAR COMMITTED GENOCIDE",
+   "n": 3,
+   "pin": [
+    4,
+    52
+   ],
+   "region": "EUROPE",
+   "source": "ICJ / Al Jazeera",
+   "summary": "ICJ, 9-6: Rohingya killings in 2017 were genocide.",
+   "tag": "CONFIRMED",
+   "topic": "JUSTICE"
+  },
+  {
+   "art": "bridge",
+   "headline": "KERCH BRIDGE HIT A THIRD TIME",
+   "n": 4,
+   "pin": [
+    36,
+    45
+   ],
+   "region": "EUROPE",
+   "source": "Reuters / Kyiv Independent",
+   "summary": "Neptune missiles halt rail traffic to Crimea.",
+   "tag": "CONFIRMED",
+   "topic": "UKRAINE WAR"
+  }
+ ],
+ "list": [
+  {
+   "n": 17,
+   "region": "MIDDLE EAST",
+   "source": "AP",
+   "text": "US reissues warnings for Bahrain, Saudi."
+  },
+  {
+   "n": 18,
+   "region": "MIDDLE EAST",
+   "source": "Horizon",
+   "text": "Kuwait repels Iran attack."
+  },
+  {
+   "n": 19,
+   "region": "ASIA",
+   "source": "FE",
+   "text": "Pakistan army kills 22 militants in raids."
+  },
+  {
+   "n": 20,
+   "region": "MIDDLE EAST",
+   "source": "FE",
+   "text": "Kataib Hezbollah ends standoff."
+  },
+  {
+   "n": 21,
+   "region": "MIDDLE EAST",
+   "source": "FE",
+   "text": "Saudi strikes kill 10 in Sanaa, Houthis say."
+  },
+  {
+   "n": 22,
+   "region": "MIDDLE EAST",
+   "source": "UNICEF",
+   "text": "Taiz water nearly halved; 800k cut off."
+  },
+  {
+   "n": 23,
+   "region": "ASIA",
+   "source": "Le Monde",
+   "text": "Trump meets Putin alone, 40 minutes."
+  },
+  {
+   "n": 24,
+   "region": "ASIA",
+   "source": "CNA",
+   "text": "Trump-Xi hold bilateral and working lunch."
+  },
+  {
+   "n": 25,
+   "region": "EUROPE",
+   "source": "CNN",
+   "text": "Trump dials into 'Coalition of Willing'."
+  },
+  {
+   "n": 26,
+   "region": "OCEANIA",
+   "source": "Kendan",
+   "text": "England win ODI series 2-1 in Hobart."
+  },
+  {
+   "n": 27,
+   "region": "EUROPE",
+   "source": "UEFA",
+   "text": "Chelsea beat PSG 1-0 in UWCL."
+  },
+  {
+   "n": 28,
+   "region": "EUROPE",
+   "source": "UEFA",
+   "text": "Man City 2-0 Hacken; Real Madrid 3-1 Inter."
+  },
+  {
+   "n": 29,
+   "region": "AMERICAS",
+   "source": "NFL",
+   "text": "Texans thrash Colts 26-3."
+  },
+  {
+   "n": 30,
+   "region": "AMERICAS",
+   "source": "NBA",
+   "text": "Grizzlies rout Warriors 126-98."
+  },
+  {
+   "n": 31,
+   "region": "AMERICAS",
+   "source": "CAMS",
+   "text": "Palo Alto +6.4% after raising guidance."
+  },
+  {
+   "n": 32,
+   "region": "AMERICAS",
+   "source": "Reuters",
+   "text": "Nvidia -3.3%, now 40% off its peak."
+  },
+  {
+   "n": 33,
+   "region": "AFRICA",
+   "source": "BBC",
+   "text": "Kenya gives $60bn mine deal to US group."
+  },
+  {
+   "n": 34,
+   "region": "AFRICA",
+   "source": "NM Media",
+   "text": "Ghana cuts rates 3 points to 11%."
+  },
+  {
+   "n": 35,
+   "region": "AFRICA",
+   "source": "NM Media",
+   "text": "Senegal row puts $2.2bn IMF deal at risk."
+  },
+  {
+   "n": 36,
+   "region": "AFRICA",
+   "source": "OkayAfrica",
+   "text": "UAE took $56.7bn undeclared gold."
+  },
+  {
+   "n": 37,
+   "region": "AFRICA",
+   "source": "OkayAfrica",
+   "text": "Jepchirchir gets 3-year doping ban."
+  },
+  {
+   "n": 38,
+   "region": "AFRICA",
+   "source": "BBC",
+   "text": "Boat sinks off Senegal; dozens missing."
+  },
+  {
+   "n": 39,
+   "region": "AFRICA",
+   "source": "Eagles Eye",
+   "text": "South Africa beat Bangladesh by 9 wkts."
+  },
+  {
+   "n": 40,
+   "region": "AFRICA",
+   "source": "Eagles Eye",
+   "text": "Kenya starts 10.8m mosquito-net drive."
+  },
+  {
+   "n": 41,
+   "region": "AMERICAS",
+   "source": "GamesIndustry",
+   "text": "6.38m watched GTA VI launch."
+  },
+  {
+   "n": 42,
+   "region": "AMERICAS",
+   "source": "Sensor Tower",
+   "text": "17.07m GTA VI pre-orders, $1.65bn."
+  },
+  {
+   "n": 43,
+   "region": "ASIA",
+   "source": "10 Things",
+   "text": "Russian bombers return to Vietnam."
+  },
+  {
+   "n": 44,
+   "region": "AMERICAS",
+   "source": "10 Things",
+   "text": "Trump bristles at Vance on Iran war."
+  },
+  {
+   "n": 45,
+   "region": "MIDDLE EAST",
+   "source": "Moneycontrol",
+   "text": "Five rivals unite to oust Netanyahu."
+  },
+  {
+   "n": 46,
+   "region": "ASIA",
+   "source": "Moneycontrol",
+   "text": "IndiGo halts flights to 4 Saudi cities."
+  },
+  {
+   "n": 47,
+   "region": "EUROPE",
+   "source": "Moneycontrol",
+   "text": "William's Indian ancestor, born 1790."
+  },
+  {
+   "n": 48,
+   "region": "AMERICAS",
+   "source": "Moneycontrol",
+   "text": "Indian man found dead in burnt car."
+  },
+  {
+   "n": 49,
+   "region": "ASIA",
+   "source": "Moneycontrol",
+   "text": "Bilawal fights plan to split provinces."
+  },
+  {
+   "n": 50,
+   "region": "AMERICAS",
+   "source": "Radioguide",
+   "text": "Hamilton 6th in wet Las Vegas practice."
+  }
+ ],
+ "masthead_sub": "ONE DAY OF WORLD NEWS, ONE PICTURE",
+ "masthead_title": "THE WORLD IN ONE DAY",
+ "regions": [
+  [
+   "AMERICAS",
+   13
+  ],
+  [
+   "ASIA",
+   9
+  ],
+  [
+   "AFRICA",
+   8
+  ],
+  [
+   "EUROPE",
+   6
+  ],
+  [
+   "MIDDLE EAST",
+   10
+  ],
+  [
+   "GLOBAL",
+   2
+  ],
+  [
+   "OCEANIA",
+   1
+  ],
+  [
+   "SPACE",
+   1
+  ]
+ ],
+ "timeline": [
+  [
+   "~05:00 UTC",
+   "GTA VI unlocks in the Americas at midnight local time."
+  ],
+  [
+   "~08:00 UTC",
+   "Ukraine hits the Kerch Bridge; rail traffic halted."
+  ],
+  [
+   "~09:00 UTC",
+   "ICJ: Myanmar committed genocide against the Rohingya."
+  ],
+  [
+   "~11:00 UTC",
+   "Trump, Xi and Putin sit down at Kylin Villa, Shenzhen."
+  ],
+  [
+   "~14:00 UTC",
+   "COP31 draft drops all fossil-fuel language."
+  ],
+  [
+   "21:00 UTC",
+   "Wall Street slumps 2%; Anthropic closes at $97."
+  ]
+ ]
+}
